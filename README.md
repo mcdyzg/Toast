@@ -51,6 +51,10 @@ gulp watch
 
 ## Usage
 
+1. 引入Toast
+2. 在render方法里<Toast ref='test' />,ref属性必须指定
+3. this.refs.test.show()调出Toast，Toast默认3秒自动消失，也可以通过设置参数控制消失时间。
+
 ```
 	var Toast = require('../src/Toast');
 	
