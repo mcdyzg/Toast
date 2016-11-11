@@ -41,16 +41,6 @@ var showToastAnimation = anim.showToastAnimation;
 var hideToastAnimation = anim.hideToastAnimation;
 
 var animation = {
-
-    show: {
-        animationDuration: '0.4s',
-        animationTimingFunction: 'cubic-bezier(0.7,0,0.3,1)'
-    },
-    hide : {
-        animationDuration: '0.4s',
-        animationTimingFunction: 'cubic-bezier(0.7,0,0.3,1)'
-    },
-
     getRef: function(willHidden) {
         return 'toast';
     },
@@ -63,7 +53,7 @@ var animation = {
             padding:'10px',
             borderRadius:'3px',
             transform: "translate3d(-50%, 0, 0)",
-            bottom: "20%",
+            bottom: "15%",
             left: "50%",
             color:'#FFF',
             backgroundColor: "#333",
@@ -80,12 +70,6 @@ var animation = {
 var Toast = React.createClass({
         propTypes: {
             className: React.PropTypes.string,
-            // 设置esc键是否可以关闭dialog.
-            keyboard: React.PropTypes.bool,
-            // 回调函数，show时候回调
-            onShow: React.PropTypes.func,
-            // 回调函数，hide时候回调
-            onHide: React.PropTypes.func,
             //
             animation: React.PropTypes.object,
             // 几秒后提示消失，默认3000,即3秒
@@ -100,12 +84,9 @@ var Toast = React.createClass({
          *
          * @returns {Object} -props object
          *  - `className` – `{string}` - calssName设置
-         *  - `onShow` – `{function}` - show的时候的回调函数
-         *  - `onHide` – `{function}` - hide的时候的回调函数
          *  - `animation` – `{object}` - 具体的动画效果对象
          *  - `duration` – `{number}` - 几秒后提示消失，默认3秒
          *  - `message` – `{string}` - 要提示的信息
-         *  - `keyboard` – `{boolean}` - 是否需要esc键隐藏toast
          * @description
          * 设置default props
          *
@@ -113,10 +94,7 @@ var Toast = React.createClass({
         getDefaultProps: function() {
             return {
                 className: "",
-                onShow: function(){},
-                onHide: function(){},
                 animation: animation,
-                keyboard: true,
                 duration: 3000,
                 message: ''
             };
@@ -171,7 +149,6 @@ var Toast = React.createClass({
                     return;
                 }
                 transitionEvents.removeEndEventListener(node, endListener);
-                this.enter();
             }.bind(this);
             transitionEvents.addEndEventListener(node, endListener);
         },
@@ -209,11 +186,6 @@ var Toast = React.createClass({
             this.setState({
                 hidden: true
             });
-            this.props.onHide();
-        },
-        // show toast回调
-        enter: function(){
-            this.props.onShow();
         },
         // 显示toast
         show: function(){
@@ -222,7 +194,6 @@ var Toast = React.createClass({
                 clearTimeout(timer)
             }
             // if(!this.hasHidden()) return;
-            this.props.onShow();
             this.setState({
                 willHidden: false,
                 hidden: false
@@ -237,28 +208,9 @@ var Toast = React.createClass({
                 willHidden: true
             });
         },
-        // hide show toggle
-        toggle: function(){
-            if(this.hasHidden())
-                this.show();
-            else
-                this.hide();
-        },
-        // 监听esc按键，隐藏toast
-        listenKeyboard: function(event) {
-            if (this.props.keyboard &&
-                (event.key === "Escape" ||
-                event.keyCode === 27)) {
-                this.hide();
-            }
-        },
 
         componentDidMount: function() {
-            window.addEventListener("keydown", this.listenKeyboard, true);
-        },
-
-        componentWillUnmount: function() {
-            window.removeEventListener("keydown", this.listenKeyboard, true);
+            // window.addEventListener("keydown", this.listenKeyboard, true);
         }
 
     });

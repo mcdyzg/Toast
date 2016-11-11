@@ -9,13 +9,13 @@ var btnStyle = {
     background: '#C94E50',
     color: '#FFFFFF',
     border: 'none'
-};
+};      
 
 var containerStyle = {
     padding: '2em',
     textAlign: 'center'
 };
-
+       
 var APP = React.createClass({
 
     getInitialState:function(){
@@ -30,7 +30,7 @@ var APP = React.createClass({
         })
         this.refs.J_toast.show();
     },
- 
+    
 
     render: function() { 
         var t = this;   
@@ -38,7 +38,7 @@ var APP = React.createClass({
             <div>
                 <div>
                     <button style={btnStyle} onClick={this.showToast}>Open</button>
-                    <Toast ref='J_toast' className="toast" message={this.state.message}/>
+                    <Toast ref='J_toast' duration={3000} className="toast" message={this.state.message}/>
                 </div>
             </div>
         );
