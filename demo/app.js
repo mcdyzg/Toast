@@ -1,4 +1,6 @@
-var Toast = require('../src/Toast');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Toast from '../src/Toast'
 
 var btnStyle = {
     margin: '1em auto',
@@ -9,39 +11,33 @@ var btnStyle = {
     background: '#C94E50',
     color: '#FFFFFF',
     border: 'none'
-};      
-
-var containerStyle = {
-    padding: '2em',
-    textAlign: 'center'
 };
-       
-var APP = React.createClass({
 
-    getInitialState:function(){
-        return {
-            message:'init'
+class APP extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: 'init'
         }
-    },
+    }
 
-    showToast:function(){
+    showToast() {
         this.setState({
-            message:'hahaha'
-        })
+            message: 'hahaha'
+        });
         this.refs.J_toast.show();
-    },
-    
+    }
 
-    render: function() { 
-        var t = this;   
-        return (       
+
+    render() {
+        return (
             <div>
                 <div>
-                    <button style={btnStyle} onClick={this.showToast}>Open</button>
+                    <button style={btnStyle} onClick={()=>this.showToast()}>Open</button>
                     <Toast ref='J_toast' duration={3000} className="toast" message={this.state.message}/>
                 </div>
             </div>
         );
     }
-});
+}
 ReactDOM.render(<APP/>, document.getElementById('AppContainer'));

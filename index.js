@@ -1,1 +1,2 @@
-module.exports = require('./src/Toast');
+'use strict';
+module.exports = require('./lib/Toast');

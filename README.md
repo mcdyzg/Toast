@@ -26,19 +26,16 @@ react项目的通用引用包cdn路径为
 
 ## 依赖说明
 
-本例依赖 react-kit
+本例依赖 react, react-dom, react-kit
 需要 cnpm isntall react-kit
 你也可以把 react-kit 放到自己项目的package.json的依赖里面
 
 ## Demo
 
-checkout code: [](http://)
-
-and run:
+run:
 
 ```
-npm install
-gulp watch
+npm start
 ```
 
 有些时候国内npm源访问比较慢，那么推荐使用cnpm。建议使用nvm管理自己的node版本，建议使用较高版本的nodejs。
