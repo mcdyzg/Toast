@@ -1,0 +1,18 @@
+{
+  "name": "react-kit",
+  "version": "0.1.14",
+  "description": "Toolkit for React",
+  "author": "Yuanyan Cao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuanyan/react-kit.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "toolkit"
+  ],
+  "_from": "react-kit@0.1.14",
+  "_resolved": "http://registry.npm.taobao.org/react-kit/download/react-kit-0.1.14.tgz"
+}

@@ -5,8 +5,7 @@
     "repository": "",
     "dependencies": {
         "react": "~15.3.2",
-        "react-dom": "~15.3.2",
-        "react-kit": "^0.1.14"
+        "react-dom": "~15.3.2"
     },
     "devDependencies": {
         "autoprefixer": "^6.5.3",

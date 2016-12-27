@@ -2,9 +2,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import transitionEvents from 'react-kit/transitionEvents'
-import insertKeyframesRule from 'react-kit/insertKeyframesRule'
-import appendVendorPrefix from 'react-kit/appendVendorPrefix'
+import transitionEvents from './react-kit/transitionEvents'
+import insertKeyframesRule from './react-kit/insertKeyframesRule'
+import appendVendorPrefix from './react-kit/appendVendorPrefix'
 
 let timer;
 const anim = {
@@ -159,11 +159,9 @@ class Toast extends React.Component {
         }
 
         return (
-            <span>
-                <div ref="toast" style={toastStyle} className={this.props.className}>
-                    {this.props.message}
-                </div>
-             </span>
+            <div ref="toast" style={toastStyle} className={this.props.className}>
+                {this.props.message}
+            </div>
         )
     }
 
