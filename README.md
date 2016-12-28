@@ -26,9 +26,9 @@ react项目的通用引用包cdn路径为
 
 ## 依赖说明
 
-本例依赖 react, react-dom, react-kit
+本例依赖 react-kit
 需要 cnpm isntall react-kit
-你也可以把 react-kit 放到自己项目的package.json的依赖里面
+需要把 react-kit 放到自己项目的package.json的依赖里面
 
 ## Demo
 
@@ -116,4 +116,4 @@ pub/1.2.0:
 
 pub/2.0.0:
 
-es6 写法
+1. es5 => es6

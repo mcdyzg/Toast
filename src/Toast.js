@@ -2,9 +2,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import transitionEvents from './react-kit/transitionEvents'
-import insertKeyframesRule from './react-kit/insertKeyframesRule'
-import appendVendorPrefix from './react-kit/appendVendorPrefix'
+import transitionEvents from 'react-kit/transitionEvents'
+import insertKeyframesRule from 'react-kit/insertKeyframesRule'
+import appendVendorPrefix from 'react-kit/appendVendorPrefix'
 
 let timer;
 const anim = {
