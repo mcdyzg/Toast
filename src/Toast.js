@@ -24,18 +24,21 @@ const anim = {
         },
         '100%': {
             opacity: 1,
-            transform: 'translate3d(-50%, -20px, 0)'
+            //transform: 'translate3d(-50%, -20px, 0)'
+            bottom: "18%"
         }
     }),
 
     hideToastAnimation: insertKeyframesRule({
         '0%': {
             opacity: 1,
-            transform: 'translate3d(-50%, -20px, 0)'
+            //transform: 'translate3d(-50%, -20px, 0)'
+            bottom: "18%"
         },
         '100%': {
             opacity: 0,
-            transform: 'translate3d(-50%, 0, 0)'
+            //transform: 'translate3d(-50%, 0, 0)'
+            bottom: "15%"
         }
     })
 };
@@ -56,9 +59,12 @@ const animation = {
             textAlign: 'center',
             padding: '10px',
             borderRadius: '3px',
-            transform: "translate3d(-50%, 0, 0)",
+            //transform: "translate3d(-50%, 0, 0)",
             bottom: "15%",
-            left: "50%",
+            //left: "50%",
+            left: 0,
+            right: 0,
+            margin: 'auto',
             color: '#FFF',
             backgroundColor: "#333",
             zIndex: 1050,
