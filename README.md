@@ -54,7 +54,7 @@ gulp watch
 
 ```
 	var Toast = require('../src/Toast');
-	
+
 	var btnStyle = {
 	    margin: '1em auto',
 	    padding: '1em 2em',
@@ -65,29 +65,29 @@ gulp watch
 	    color: '#FFFFFF',
 	    border: 'none'
 	};
-	
+
 	var containerStyle = {
 	    padding: '2em',
 	    textAlign: 'center'
 	};
-	
+
 	var APP = React.createClass({
-	
+
 	    getInitialState:function(){
 	        return {
 	            message:'init'
 	        }
 	    },
-	
+
 	    showToast:function(){
 	        this.setState({
 	            message:'hahaha'
 	        })
 	        this.refs.J_toast.show();
 	    },
-	 
-	
-	    render: function() { 
+
+
+	    render: function() {
 	        var t = this;   
 	        return (       
 	            <div>
@@ -121,3 +121,7 @@ pub/2.0.0:
 pub/2.0.3:
 
 1. 修复绝对居中的bug
+
+pub/2.0.4:
+
+1. 增加react-kit引用。
